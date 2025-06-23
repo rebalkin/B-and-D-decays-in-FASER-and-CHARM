@@ -53,7 +53,7 @@ The output of this file is an array `(mX, tau, Nevents_FASER, Nevents_FASER2)` o
 
 ## demo/main.ipynb  
 We include a demo file in the form of a Jupyter notebook to demonstrate how the code can be used. The file:  
-1. Creates an X spectrum and saves it to file (commented out).  
+1. Creates an X spectrum and saves it to file.  
 2. Reads a pre-saved X spectrum file.  
 3. Calculates the signal for an array of tau values.  
 4. Calculates the branching ratio bounds, defined as `3 / (Number of events)`.  
