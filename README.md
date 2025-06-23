@@ -23,7 +23,7 @@ Contains functions used to calculate the spectrum of X particles produced from t
 
   The output of this function is the X spectrum.
   For LHC, it is formatted as a numpy array of shape (N * Ntheta * Nphi, 3) where each row is (log10(theta), log10(p), weight), where N is the number of lines in the B or D spectrum used.
-  For CHARM, it is formatted as a numpy array of shape (N * Ntheta * Nphi, 4) where each row is (theta, phi,p, weight), where N is the number of lines in the B or D spectrum used (not that CHARM is off-axis, therefore we are tracking the aximuthal angle).
+  For CHARM, it is formatted as a numpy array of shape (N * Ntheta * Nphi, 4) where each row is (theta, phi,p, weight), where N is the number of lines in the B or D spectrum used (note that CHARM is off-axis, therefore we are tracking the azimuthal angle).
   **Note**: this array can be saved to file and used to estimate the number of events for different values of X lifetime.
 ## lib/signal.py
 Contains function used to calculate to total number of X decay events expected in the decay volume of FASER or CHARM. This number should be then multiplied by the branching ratio of X to the relevant visible final state in the relevant experiment, e.g. photons and leptons in CHARM. The most relevant function is `get_events(Xspec, mX, tau,decaying_meson,exp)`, where
