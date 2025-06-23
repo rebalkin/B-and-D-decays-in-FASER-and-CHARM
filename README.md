@@ -34,7 +34,7 @@ Contains function used to calculate to total number of X decay events expected i
 - exp : either 'FASER' or 'CHARM'.
 The output of this file is an array (mX,tau,Nevents_FASER,Nevents_FASER2) or (mX,tau,NeventsCHARM) for FASER and CHARM, respectivley. FASER2 differs from FASER by its location and geometry, as well as by the assumed B and D yields due to the increased LHC luminocity.
 
-## Usage
+## demo/main.ipynb
 We include a demo file in the form of a jupyter notebook to demonestrate how the code can be used. The file
 1) Creates an X spectrum and saves it to file (commented out).
 2) Reads a pre-saved X spectrum file.
