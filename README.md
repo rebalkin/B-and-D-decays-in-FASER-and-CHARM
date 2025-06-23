@@ -21,7 +21,10 @@ Contains functions used to calculate the spectrum of X particles produced from t
 - Ntheta,Nphi : number of values in the grid (with $-1<\cos \theta < +1$ and $0<\phi<2\pi$) for the $4\pi$ range of X directions in the rest frame of the decaying meson.
 - eps : colinear threshold  $-1+\epsilon<\cos \theta < +1-\epsilon$.  X which are produced colinearly with the decaying particle that are within geometrical acceptance generate an overestimation of the signal due to finite grid size. Neglecting this edge consitutes an underestimation of the signal and is therefore conservative.
 
-  The output of this function is the X spectrum, formatted as a numpy array of shape (N * Ntheta * Nphi, 3) where each row is (log10(theta), log10(p), weight), where N is the number of lines in the B or D spectrum used. **Note**: this array can be saved to file and used to estimate the number of events for different values of X lifetime.
+  The output of this function is the X spectrum.
+  For LHC, it is formatted as a numpy array of shape (N * Ntheta * Nphi, 3) where each row is (log10(theta), log10(p), weight), where N is the number of lines in the B or D spectrum used.
+  For CHARM, it is formatted as a numpy array of shape (N * Ntheta * Nphi, 4) where each row is (theta, phi,p, weight), where N is the number of lines in the B or D spectrum used (not that CHARM is off-axis, therefore we are tracking the aximuthal angle).
+  **Note**: this array can be saved to file and used to estimate the number of events for different values of X lifetime.
 ## lib/signal.py
 Contains function used to calculate to total number of X decay events expected in the decay volume of FASER or CHARM. This number should be then multiplied by the branching ratio of X to the relevant visible final state in the relevant experiment, e.g. photons and leptons in CHARM. The most relevant function is `get_events(Xspec, mX, tau,decaying_meson,exp)`, where
 - Xspec  : spectrum of X particles, formatted as (log10(theta), log10(p), weight). Can be calcuated using `Xspectrum(mX,decaying_meson,exp,Ntheta,Nphi,eps)`.
